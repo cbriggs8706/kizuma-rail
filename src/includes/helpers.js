@@ -3,8 +3,8 @@
  * @returns {string} A unique confirmation code.
  */
 const generateConfirmationCode = () => {
-    return 'JR' + Math.random().toString(36).substring(2, 10).toUpperCase();
-};
+	return 'JR' + Math.random().toString(36).substring(2, 10).toUpperCase()
+}
 
 /**
  * Converts kilometers to miles.
@@ -12,9 +12,9 @@ const generateConfirmationCode = () => {
  * @returns {number} The equivalent distance in miles.
  */
 const kmToMiles = (km) => {
-    const conversionFactor = 0.621371;
-    return km * conversionFactor;
-};
+	const conversionFactor = 0.621371
+	return km * conversionFactor
+}
 
 /**
  * Converts Japanese Yen to US Dollars.
@@ -22,8 +22,37 @@ const kmToMiles = (km) => {
  * @returns {number} The equivalent amount in US Dollars.
  */
 const yenToUsd = (yen) => {
-    const exchangeRate = 0.0066; // Example rate: 1 Yen = 0.0066 USD
-    return yen * exchangeRate;
-};
+	const exchangeRate = 0.0066 // Example rate: 1 Yen = 0.0066 USD
+	return yen * exchangeRate
+}
 
-export { generateConfirmationCode, kmToMiles, yenToUsd };
+// TODO4 add month conversion
+/**
+ * Converts numbers to their Month abbreviations.
+ * @param {number} monthNumber - The month number (1-12).
+ * @returns {string} The corresponding month abbreviation.
+ */
+const monthNumberToAbbreviation = (monthNumber) => {
+	const months = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec',
+	]
+	return months[monthNumber - 1] || ''
+}
+
+export {
+	generateConfirmationCode,
+	kmToMiles,
+	yenToUsd,
+	monthNumberToAbbreviation,
+}
